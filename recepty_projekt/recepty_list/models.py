@@ -1,8 +1,6 @@
 from django.db import models
 from .forms import DifficultyForm
 
-
-# skoncila si s videom na:28 min
 # Create your models here.
 
 class Ingredients(models.Model):
@@ -20,9 +18,9 @@ class Recept(models.Model):
     #https://www.geeksforgeeks.org/durationfield-django-models/ toto niekde musis pridat
     #https://pytutorial.com/django-durationField-examples
     portions = models.IntegerField()
-    difficulty = DifficultyForm()
+    #difficulty = DifficultyForm()
     #mozno to je zle https://www.geeksforgeeks.org/choicefield-django-forms/
-    ingredients = Ingredients()
+    #ingredients = Ingredients()
 
 
     def __str__(self):

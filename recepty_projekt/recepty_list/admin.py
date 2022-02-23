@@ -4,7 +4,7 @@ from .models import Ingredients
 # Register your models here.
 
 class ReceptyAdmin(admin.ModelAdmin):
-    list_display = ('name','author')
+    list_display = ('name','cooking_time','author')
 
 admin.site.register(Recept, ReceptyAdmin)
 #neviem ci chcem ingredience vypisovat yet

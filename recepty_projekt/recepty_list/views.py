@@ -9,3 +9,4 @@ from .models import Recept
 class ReceptView(viewsets.ModelViewSet):
     serializer_class = ReceptSerializer
     queryset = Recept.objects.all()
+

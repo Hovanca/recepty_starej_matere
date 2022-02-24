@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from recepty_list import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register(r"recepty",views.ReceptView,'Recepty')
@@ -24,4 +26,5 @@ router.register(r"recepty",views.ReceptView,'Recepty')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include(router.urls))
-]
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+    #nepatri to k admin alebo api je to link naviac a preto to pridavame cez plusko

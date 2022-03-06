@@ -32,7 +32,6 @@ class Recept(models.Model):
         im_io = BytesIO()
         im_res = im.resize((1020, 573))
         im.save(im_io, format = 'JPEG', quality=60)
-        #new_image = File(im_io, name=image.name)
         im_io.seek(0)
         new_image = InMemoryUploadedFile(im_io, 'ImageField', "%s.jpg" % uploaded_image.name.split('.')[0],
                                              'image/jpeg', sys.getsizeof(im_io), None)

@@ -19,10 +19,7 @@ from rest_framework import routers
 from recepty_list import views
 from django.conf import settings
 from django.conf.urls.static import static
-#auth
-from account.api.views import(
-    registration_view,
-)
+
 from rest_framework.authtoken.views import obtain_auth_token
 app_name = 'account'
 
@@ -33,7 +30,6 @@ router.register(r"recepty",views.ReceptView,'Recepty')
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/',include(router.urls)),
-    path('register',registration_view, name = "register"),
     path('login',obtain_auth_token, name = "login")
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
     #nepatri to k admin alebo api je to link naviac a preto to pridavame cez plusko

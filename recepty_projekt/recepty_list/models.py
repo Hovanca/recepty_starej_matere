@@ -1,8 +1,15 @@
 from django.db import models
+#na compress
 from io import BytesIO
 from PIL import Image
 import sys
 from django.core.files.uploadedfile import InMemoryUploadedFile
+# na auth
+from django.conf import settings
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from rest_framework.authtoken.models import Token
+
 
 # Create your models here.
 
@@ -58,3 +65,38 @@ class Recept(models.Model):
 
 
 #ked menis strukturu databazy tak musis urobit makemigrations
+
+
+#auth
+class Account(AbstractBaseUser):
+    email = models.EmailField(verbose_name = "email", max_length = 60, unique = True)
+    username = models.CharField(max_length = 30, unique = True)
+    date_joined = models.DateTimeField(verbose_name= "date joined", auto_now_add = True)
+    last_login = models.DateTimeField(verbose_name = "last login", auto_now = True)
+    is_admin = models.BooleanField(default = False)
+    is_active = models.BooleanField(default = True)
+    is_staff = models.BooleanField(default = False)
+    is_superuser = models.BooleanField(default = False)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+
+    objects = MyAccountManager()
+
+    def __str__(self):
+        return self.email
+
+    #for checking permisson, admin has all permissions
+    def has_perm(self,perm, obj = None):
+        return self.is_admin
+
+    #user permission, if he can see this app
+    def has_module_perms(self, app_label):
+        return True
+
+
+#najprv robime registraciu noveho usera
+@receiver(post_save,sender = settings.AUTH_USER_MODEL)
+def create_auth_token(sender,instance = None, created = False, **kwargs):
+    if created:
+        Token.objects.create(user = instance)

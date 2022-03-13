@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c389b480-ca1e-4f3c-849f-4264e1b72d18" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recepty_projekt/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/recepty_projekt/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recepty_projekt/recepty_list/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/recepty_projekt/recepty_list/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recepty_projekt/recepty_list/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/recepty_projekt/recepty_list/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recepty_projekt/recepty_projekt/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/recepty_projekt/recepty_projekt/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recepty_projekt/recepty_projekt/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recepty_projekt/recepty_projekt/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +23,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -101,7 +114,8 @@
       <workItem from="1645622471325" duration="203000" />
       <workItem from="1645714293857" duration="5995000" />
       <workItem from="1645809923790" duration="53000" />
-      <workItem from="1646587515817" duration="3431000" />
+      <workItem from="1646587515817" duration="3641000" />
+      <workItem from="1647168463995" duration="3792000" />
     </task>
     <servers />
   </component>

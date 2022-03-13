@@ -37,10 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework.authtoken',
     'corsheaders',
     'rest_framework',
     'recepty_list',
 ]
+
+# potrebne na to aby django vedelo ze tu mame autentikaciu a o aku sa jedna - token
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
+
+AUTH_USER_MODEL = "account.Account"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
